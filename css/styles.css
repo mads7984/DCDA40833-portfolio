@@ -6,10 +6,11 @@
 /* =========================
    CSS Variables (Color Scheme)
    ========================= */
+    /* I didn't change the colors much because I wanted to make sure it looked nice, and I love the TCU purple, so I changed the hue of the light purple and made the accent color an aqua blue */
 :root {
     --primary-color: #4d1979;      /* TCU Purple */
-    --secondary-color: #7c3aed;    /* Light Purple */
-    --accent-color: #ffd700;       /* Gold accent */
+    --secondary-color: #7d37a5;    /* Blue toned purple */
+    --accent-color: #359bef;       /* Blue accent */
     --text-color: #333;            /* Dark gray for text */
     --text-secondary: #64748b;     /* Lighter gray for captions */
     --bg-color: #f4f4f4;           /* Light background */
