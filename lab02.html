@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Evaluation | Your Name</title>
+    <meta name="description" content="Skills Portfolio showcasing work from DCDA 40833">
+    <meta name="author" content="Madeline Gordy">
+    <title>Madeline Gordy | DCDA 40833 Skills Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
         <nav>
             <a href="index.html">Home</a>
-            <a href="ai-evaluation.html" class="active">Lab 2: AI Evaluation</a>
+            <a href="lab02.html" class="active">Lab 2: AI Evaluation</a>
             <!-- Add more lab links as the semester progresses -->
         </nav>
         <h1>AI Tool Evaluation</h1>
@@ -50,31 +52,36 @@
         </section>
 
         <section>
-            <h2>Tool 2: Play HT</h2>
+            <h2>Tool 2: Claude</h2>
             <!-- Same structure as Tool 1 -->
-              <h3>Capabilities</h3>
-            <p></p>
+            <h3>Capabilities</h3>
+            <p>Claude is an AI chat bot designed to assist with tasks such as writing, coding, and information retrieval. When testing its capabilities, the model transparently states the steps it took to produce the given output, helping users see where the information used to generate the response came from and allows further exploration of cited sources. Claude’s capabilities are especially good at document processing, complex reasoning, problem solving, and technical writing. When given a multi-page document with specified page numbers, the model was able to analyze the text and provide main themes, key insights, and analytical observations. Whenever presented with a complex logic puzzle, the tool was able to break down the question, carefully analyze each piece of information provided in the question, and come to a conclusion, accompanied by a step-by-step solution. However, drawback to the model is that the free version of Claude, which uses Sonnet 4.5, has a knowledge cutoff date of January 2025, so it must do a manual search for the information requested versus using the data it was trained with. </p>
 
             <!-- Add screenshots or examples -->
             <figure class="viz-container">
-                <img src="images/consensususerinterface.png" alt="User Interface">
-                <figcaption>Figure 1: The user interface of Consensus, which is similar to other AI chat bots such as ChatGPT and Copilot.</figcaption>
+                <img src="images/claudesteps.png" alt="Claude steps">
+                <figcaption>Figure 1: Claude's explicit outline of steps taken to generated the requested output with followable links for the user to explore further.</figcaption>
             </figure>
              <figure class="viz-container">
-                <img src="images/consensuseconorenviron.png" alt="Answer to subjective question">
-                <figcaption>Figure 2: Representation of how objective, literature based platforms, such as Consensus, struggle to generate a value based response to a subjective questions.</figcaption>
+                <img src="images/claudemultipageanalysis1.png" alt="Multi-page analysis part 1">
+                <img src="images/claudemultipageanalysis2.png" alt="Multi-page analysis part 2">
+                <figcaption>Figure 2: Claude's multi-step analysis of an imported document with specified parameters.</figcaption>
+            </figure>
+             <figure class="viz-container">
+                <img src="images/claudelogicpuzzle1.png" alt="Multi-page analysis part 1">
+                <img src="images/claudelogicpuzzle2.png" alt="Multi-page analysis part 2">
+                <figcaption>Figure 2: Claude's multi-step analysis of a given logic puzzle and solution.</figcaption>
+            </figure>
+               <figure class="viz-container">
+                <img src="images/claudeknowledgecutoff.png" alt="Multi-page analysis part 1">
+                <figcaption>Figure 2: Claude's output if the requested information occurred after the knowledge cutoff date (January 31, 2025 for Sonnet 4.5).</figcaption>
             </figure>
 
             <h3>Appropriate Use</h3>
-            <p></p>
+            <p>Claude could effectively be used as a research assistant to analyze multiple long documents and papers. With the ability to process up to 100,000 tokens, or approximately 75,000 words, in a single conversation, Claude is ideal for tasks that require deep contextual understanding of lengthy documents or books. However, Claude would not be useful as a real-time news source, as its knowledge cutoff is January 2025. Although the model can search the web for information to answer questions about events after the knowledge cutoff date, outputs may exclude relevant context, include misinformation and low-quality sources, and overall may not match the quality of output about events within the knowledge cutoff date.</p>
 
             <h3>Ethical Considerations</h3>
-            <p></p>
-
-            <figure class="viz-container">
-                <img src="images/consensusrankingpapers.png" alt="Description of screenshot">
-                <figcaption>Figure 3: The generic transparency statement of how papers cited in the ouput are ranked. This statement is the same for every conversation thread in the platform, with the exception of the number of papers, which changes according to how many total papers were cited in the thread.</figcaption>
-            </figure>
+            <p>Anthropic, the AI company that owns Claude, recently launched Claude’s new constitution at the World Economic Forum’s Davos Summit. The principles of the new constitution are that Claude should be “broadly safe” (not undermining human oversight), “broadly ethical” (honest, avoiding inappropriate, dangerous, or harmful actions), “genuinely helpful” (benefitting its users), as well as being “compliant with Anthropic’s guidelines”. Comparatively, the new constitution shifts from the previously rule-based AI alignment to a reason-based one, explaining the logic behind ethical principles versus outlining specific authorized behaviors. However, the new constitution does have drawbacks. The constitution will likely need revisions as AI advances and becomes capable of sophisticated deception, and if the model detects it’s being tested, it may only perform compliance rather than genuinely adopting the ethical principles outlined in the constitution. Although this constitutional approach may work now, as AI systems approach or exceed human-level reasoning, this framework may fail, another limitation of reason-based AI alignment.</p>
         </section>
 
         <section>
@@ -84,7 +91,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Your Name | <a href="https://github.com/yourusername/dcda-portfolio">GitHub</a></p>
+        <p>&copy; 2026 Madeline Gordy | <a href="https://github.com/mads7984/DCDA40833-portfolio">GitHub</a></p>
     </footer>
 </body>
 </html>
