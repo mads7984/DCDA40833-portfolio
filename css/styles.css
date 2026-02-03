@@ -7,10 +7,11 @@
    CSS Variables (Color Scheme)
    ========================= */
     /* I didn't change the colors much because I wanted to make sure it looked nice, and I love the TCU purple, so I changed the hue of the light purple and made the accent color an aqua blue */
+    /* After Lab 2 I decided to change the color scheme a bit more. I looked up good tri color combinations and chose a navy/periwinkle/light blue color combination. I used html-color.codes to find the color codes for the colors I wanted to use */
 :root {
-    --primary-color: #4d1979;      /* TCU Purple */
-    --secondary-color: #7d37a5;    /* Blue toned purple */
-    --accent-color: #359bef;       /* Blue accent */
+    --primary-color: #003366;      /* Dark Midnight Blue */
+    --secondary-color: #a7b8db;    /* Light Steel Blue */
+    --accent-color: #8f90be;       /* Periwinkle accent */
     --text-color: #333;            /* Dark gray for text */
     --text-secondary: #64748b;     /* Lighter gray for captions */
     --bg-color: #f4f4f4;           /* Light background */
@@ -62,7 +63,7 @@ header p {
 }
 
 nav {
-    background-color: #3d1461;
+    background-color: #7a93c7;
     padding: 0.75rem;
     display: flex;              /* Make nav a flex container */
     justify-content: center;    /* Center the ul inside nav */
