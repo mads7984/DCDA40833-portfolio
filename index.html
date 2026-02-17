@@ -11,7 +11,12 @@
 <body>
     <!-- Navigation: Links to all portfolio pages -->
     <nav>
-        <ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <ul id="nav-menu">
             <li><a href="index.html">Home</a></li>
             <!-- There was a disconnect between the navigation code and the starter template outlined in the assignment webpage (ex. ai-evaluation.html and tufte-critique.html). The link to the lab page was a different file name than the name we were instructed to name the lab file. I changed the file names in the nav link code rather than changing the name of the lab file for consistency and organization. -->
             <li><a href="lab02.html">Lab 2: AI Evaluation</a></li>
@@ -118,5 +123,6 @@
         <p><a href="https://github.com/mads7984/DCDA40833-portfolio">View Repository on GitHub</a></p>
         <p>&copy; 2026 Madeline Gordy | DCDA 40833 | TCU</p>
     </footer>
-</body>
+    <!-- Navigation JavaScript -->
+    <script src="js/navigation.js"></script></body>
 </html>

@@ -67,10 +67,46 @@ nav {
     padding: 0.75rem;
     display: flex;              /* Make nav a flex container */
     justify-content: center;    /* Center the ul inside nav */
+    align-items: center;        /* Vertically center items */
     position: sticky;           /* Stick to top when scrolling */
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+    display: none;              /* Hidden on desktop by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 101;
+    position: absolute;
+    right: 1rem;
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Hamburger animation when active */
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* Style the navigation list */
@@ -99,6 +135,12 @@ nav a {
 
 nav a:hover {
     background-color: var(--primary-color);
+}
+
+/* Active page indicator */
+nav a.active {
+    background-color: var(--primary-color);
+    font-weight: bold;
 }
 
 /* =========================
@@ -382,20 +424,47 @@ footer a:hover {
         font-size: 1.5rem;     /* Smaller on mobile */
     }
 
-    nav {
-        font-size: 0.9rem;
+    /* Show hamburger menu on mobile */
+    .hamburger {
+        display: block;
     }
 
-    /* Stack navigation vertically on mobile */
+    nav {
+        font-size: 0.9rem;
+        justify-content: flex-start;  /* Align hamburger to left */
+        padding: 0.75rem 1rem;
+    }
+
+    /* Hide navigation menu by default on mobile */
     nav ul {
-        flex-direction: column;  /* Change from row to column */
-        align-items: center;     /* Center the stacked items */
+        display: none;
+        flex-direction: column;      /* Stack vertically */
+        align-items: center;
+        position: absolute;
+        top: 100%;                   /* Position below nav bar */
+        left: 0;
+        right: 0;
+        background-color: #7a93c7;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+        gap: 0.5rem;
+    }
+
+    /* Show menu when active class is added */
+    nav ul.active {
+        display: flex;
+    }
+
+    nav li {
+        width: 100%;
+        text-align: center;
     }
 
     nav a {
-        display: block;          /* Full width for easier tapping */
+        display: block;              /* Full width for easier tapping */
         width: 100%;
         text-align: center;
+        padding: 0.75rem 1rem;
     }
 
     main section {
