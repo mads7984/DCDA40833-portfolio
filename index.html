@@ -24,21 +24,22 @@
             <li><a href="lab04.html">Lab 4: Tableau Visualization</a></li>
             <li><a href="lab5.html">Lab 5: Vibe Coding</a></li>
             <li><a href="hometown-map.html">Hometown Map</a></li>
-        </ul>
-        <!-- Dark Mode Toggle -->
-        <div class="theme-toggle-wrapper">
-            <!-- I had to do a little more research on the label tag because I was confused about what it does. I found out that it is used to associate a label with an input element for accessibility purposes. It allows the entire component to be clicked which toggles the check box that completes the task of switching which visual mode the webpage is on -->
-            <label class="theme-toggle" for="theme-switch" aria-label="Toggle dark mode">
-                <!-- This is the checkbox assigned to the function of toggling dark mode and light mode -->
-                <input type="checkbox" id="theme-switch" />
-                <!-- Creates the visual slider element -->
-                <span class="slider">
+            <!-- Dark Mode Toggle -->
+            <!-- After experiencing formatting issues whenever the screen was adjusted to 768px, AI generated code that added the toggle as a menu option. Whenever the menu is collapsed, the toggle is collapsed inside the menu alongside the links to different labs -->
+            <li class="theme-toggle-wrapper">
+                <!-- I had to do a little more research on the label tag because I was confused about what it does. I found out that it is used to associate a label with an input element for accessibility purposes. It allows the entire component to be clicked which toggles the check box that completes the task of switching which visual mode the webpage is on -->
+                <label class="theme-toggle" for="theme-switch" aria-label="Toggle dark mode">
+                    <!-- This is the checkbox assigned to the function of toggling dark mode and light mode -->
+                    <input type="checkbox" id="theme-switch" />
+                    <!-- Creates the visual slider element -->
+                    <span class="slider">
                     <!-- Creates the visual icon for the sun as light mode and the moon as dark mode. This is done by using the styling hook for positioning and including the symbols that indicate whether the webpage is on dark mode or light mode -->
                     <span class="icon sun">☀️</span>
                     <span class="icon moon">🌙</span>
                 </span>
             </label>
-        </div>
+            </li>
+        </ul>
     </nav>
 
     <!-- Header: Your name and course info -->

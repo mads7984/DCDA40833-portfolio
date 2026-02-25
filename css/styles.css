@@ -195,11 +195,15 @@ nav a.active {
 /* =========================
    Dark Mode Toggle Switch
    ========================= */
+/* On desktop, position toggle absolutely in top-right of nav */
 .theme-toggle-wrapper {
     position: absolute;
     right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
+    list-style: none;
 }
 
 .theme-toggle {
@@ -606,9 +610,18 @@ footer a:hover {
         padding: 0.75rem 1rem;
     }
 
-    /* Adjust theme toggle position on mobile */
+    /* Adjust theme toggle to appear as list item on mobile */
     .theme-toggle-wrapper {
-        right: 0.5rem;
+        position: relative;          /* Remove absolute positioning */
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0.75rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        margin-top: 0.5rem;
     }
 
     .theme-toggle {
