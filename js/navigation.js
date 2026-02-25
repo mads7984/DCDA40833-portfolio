@@ -62,4 +62,61 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 250);
         });
     }
+
+    // =========================
+    // Dark Mode Toggle Handler
+    // =========================
+
+    // I have some pretty basic JavaScript knowledge, but at first glance this was confusing to understand. The AI already provided comments for this code, which helped with my understanding of how it works and reminded me of the syntax of JavaScript. I've become very used to coding in Python, but I've been able to draw connections between the two languages to translate what is being done.
+    const themeSwitch = document.getElementById('theme-switch');
+    
+    // Check if theme switch exists before adding functionality
+    if (themeSwitch) {
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        // Apply saved theme on page load
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeSwitch.checked = true;
+        }
+        
+        // Toggle dark mode when switch is clicked
+        themeSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                // Enable dark mode
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Enable light mode
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        // Optional: Listen for system theme preference changes
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // Only apply system preference if user hasn't set their own preference
+        if (!localStorage.getItem('theme')) {
+            if (prefersDarkScheme.matches) {
+                document.body.classList.add('dark-mode');
+                themeSwitch.checked = true;
+            }
+        }
+        
+        // Listen for changes to system preference
+        prefersDarkScheme.addEventListener('change', function(e) {
+            // Only auto-switch if user hasn't manually set a preference
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    document.body.classList.add('dark-mode');
+                    themeSwitch.checked = true;
+                } else {
+                    document.body.classList.remove('dark-mode');
+                    themeSwitch.checked = false;
+                }
+            }
+        });
+    }
 });

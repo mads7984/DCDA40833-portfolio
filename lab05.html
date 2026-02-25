@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-Assisted Development - DCDA 40833 Lab 5">
+    <meta name="author" content="Your Name">
+    <title>Madeline Gordy | DCDA 40833 Lab 5: AI-Assisted Development</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="lab02.html">Lab 2: AI Evaluation</a>
+            <a href="lab04.html">Lab 4: Data Visualization</a>
+            <a href="lab05.html" class="active">Lab 5: Vibe Coding</a>
+            <!-- Add more lab links as the semester progresses -->
+             
+        <!-- Dark Mode Toggle -->
+        <div class="theme-toggle-wrapper">
+            <!-- I had to do a little more research on the label tag because I was confused about what it does. I found out that it is used to associate a label with an input element for accessibility purposes. It allows the entire component to be clicked which toggles the check box that completes the task of switching which visual mode the webpage is on -->
+            <label class="theme-toggle" for="theme-switch" aria-label="Toggle dark mode">
+                <!-- This is the checkbox assigned to the function of toggling dark mode and light mode -->
+                <input type="checkbox" id="theme-switch" />
+                <!-- Creates the visual slider element -->
+                <span class="slider">
+                    <!-- Creates the visual icon for the sun as light mode and the moon as dark mode. This is done by using the styling hook for positioning and including the symbols that indicate whether the webpage is on dark mode or light mode -->
+                    <span class="icon sun">☀️</span>
+                    <span class="icon moon">🌙</span>
+                </span>
+            </label>
+        </div>
+    </nav>
+        </nav>
+        <h1>AI-Assisted Development: [Experiment Type]</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Experiment Overview</h2>
+            <p>Brief description of which experiment(s) you completed and what you built/analyzed...</p>
+            
+            <!-- Screenshot or demo of working feature -->
+            <figure>
+                <img src="images/lab5-demo.png" alt="Screenshot of working feature">
+                <figcaption>Figure 1: [Description of what's shown]</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Key Code Snippet</h2>
+            <p>Below is a key section of the AI-generated code with comments using the understanding spectrum:</p>
+            
+            <pre><code>
+&lt;!-- Example structure for commented code --&gt;
+&lt;!-- I understand the logic: This function toggles dark mode by switching CSS classes --&gt;
+function toggleDarkMode() {
+    // I wrote this: Added event listener for the button click
+    document.body.classList.toggle('dark-mode');
+    
+    // I understand what it does but not how: This localStorage part saves preference
+    // The syntax with JSON.stringify is still fuzzy to me
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+}
+
+// I don't understand this: The next section handles something with cookies?
+// After asking AI to explain: Now I understand it's checking saved preferences on page load
+            </code></pre>
+            
+            <p><strong>Note:</strong> Comments reflect my honest understanding at each point in the code.</p>
+        </section>
+
+        <section>
+            <h2>Critical Reflection</h2>
+            
+            <h3>Technical Understanding</h3>
+            <p><strong>What code did the AI generate?</strong> Describe the feature/function in your own words...</p>
+            
+            <p><strong>How does it work?</strong> Explain the key logic or mechanisms. Where did you land on the understanding spectrum? If there are parts you still don't fully understand after trying, say so...</p>
+            
+            <p><strong>What did you modify?</strong> Did you need to fix bugs, adjust styling, or change functionality? Why?...</p>
+
+            <h3>Process Evaluation</h3>
+            <p><strong>When was AI helpful?</strong> What tasks did it accelerate or simplify?...</p>
+            
+            <p><strong>When was AI problematic?</strong> Where did it produce incorrect, inefficient, or unnecessarily complex code?...</p>
+            
+            <p><strong>What's your role?</strong> In an AI-assisted workflow, what remains uniquely human? What can't (or shouldn't) be automated?...</p>
+
+            <h3>Ethical & Pedagogical Considerations</h3>
+            <p><strong>Learning trade-offs:</strong> Does vibe coding help or hinder your development as a programmer? Under what conditions?...</p>
+            
+            <p><strong>Attribution:</strong> When using AI-generated code, what does proper citation look like? (Consider academic vs. professional contexts)...</p>
+            
+            <p><strong>Your guidelines:</strong> What personal rules will you follow for using AI in coding? When will you use it? When won't you?...</p>
+        </section>
+
+        <section>
+            <h2>Vibe Coding Guidelines</h2>
+            <p>Based on this experiment, here are my personal guidelines for when and how to use AI in development:</p>
+            <ul>
+                <li><strong>I will use AI when:</strong> [List situations where AI is appropriate]</li>
+                <li><strong>I will not use AI when:</strong> [List situations where you'll avoid AI]</li>
+                <li><strong>I will always:</strong> [List non-negotiable practices like commenting, testing, etc.]</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Original AI Prompts & Output</h2>
+            <p><strong>Prompt 1:</strong> [Copy your original prompt here]</p>
+            <p><strong>AI Response:</strong></p>
+            <pre><code>
+[Paste AI's initial output here]
+            </code></pre>
+            
+            <p><strong>Follow-up Prompt:</strong> [If applicable]</p>
+            <p><strong>AI Response:</strong></p>
+            <pre><code>
+[Paste follow-up output here]
+            </code></pre>
+            
+            <p><strong>Link to Google Colab notebook:</strong> <a href="#">[Link to your .ipynb file if applicable]</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Your Name | <a href="https://github.com/yourusername/DCDA40833-portfolio">GitHub</a> | <a href="#">GitHub Repository</a></p>
+    </footer>
+</body>
+</html>

@@ -8,6 +8,9 @@
    ========================= */
     /* I didn't change the colors much because I wanted to make sure it looked nice, and I love the TCU purple, so I changed the hue of the light purple and made the accent color an aqua blue */
     /* After Lab 2 I decided to change the color scheme a bit more. I looked up good tri color combinations and chose a navy/periwinkle/light blue color combination. I used html-color.codes to find the color codes for the colors I wanted to use */
+
+/* Used my previous color scheme for the light mode and made that the default */
+/* Light Mode (Default) */
 :root {
     --primary-color: #003366;      /* Dark Midnight Blue */
     --secondary-color: #a7b8db;    /* Light Steel Blue */
@@ -16,6 +19,50 @@
     --text-secondary: #64748b;     /* Lighter gray for captions */
     --bg-color: #f4f4f4;           /* Light background */
     --white: #ffffff;
+    --nav-bg: #7a93c7;             /* Navigation background */
+    --card-bg: #ffffff;            /* Card/section background */
+    --shadow: rgba(0, 0, 0, 0.1);  /* Box shadows */
+}
+
+/* Created a color scheme for dark mode that is still visually appealing while maintaining good contrast for readability */
+/* Dark Mode */
+body.dark-mode {
+    --primary-color: #5c8dd6;      /* Lighter blue for dark mode */
+    --secondary-color: #4a5f8a;    /* Muted steel blue */
+    --accent-color: #a5a6d8;       /* Light periwinkle */
+    --text-color: #e4e4e7;         /* Light gray text */
+    --text-secondary: #a1a1aa;     /* Secondary text */
+    --bg-color: #1a1a2e;           /* Dark navy background */
+    --white: #1a1a2e;              /* Dark for "white" areas */
+    --nav-bg: #293548;             /* Dark nav background */
+    --card-bg: #252837;            /* Dark card background */
+    --shadow: rgba(0, 0, 0, 0.3);  /* Stronger shadows for depth */
+}
+
+/* Dark mode specific adjustments for images and borders */
+body.dark-mode img {
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+body.dark-mode img:hover {
+    opacity: 1;
+}
+
+body.dark-mode .viz-container img {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode a {
+    color: var(--accent-color);
+}
+
+body.dark-mode main section a {
+    color: var(--accent-color);
+}
+
+body.dark-mode main section a:hover {
+    color: var(--primary-color);
 }
 
 /* =========================
@@ -36,6 +83,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* =========================
@@ -63,7 +111,7 @@ header p {
 }
 
 nav {
-    background-color: #7a93c7;
+    background-color: var(--nav-bg);
     padding: 0.75rem;
     display: flex;              /* Make nav a flex container */
     justify-content: center;    /* Center the ul inside nav */
@@ -71,7 +119,8 @@ nav {
     position: sticky;           /* Stick to top when scrolling */
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px var(--shadow);
+    transition: background-color 0.3s ease;
 }
 
 /* Hamburger Menu Button */
@@ -144,6 +193,88 @@ nav a.active {
 }
 
 /* =========================
+   Dark Mode Toggle Switch
+   ========================= */
+.theme-toggle-wrapper {
+    position: absolute;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.theme-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.theme-toggle input:checked + .slider::before {
+    transform: translateX(30px);
+}
+
+.theme-toggle input:checked + .slider {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.slider .icon {
+    font-size: 16px;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.slider .sun {
+    opacity: 1;
+}
+
+.slider .moon {
+    opacity: 0.5;
+}
+
+.theme-toggle input:checked + .slider .sun {
+    opacity: 0.5;
+}
+
+.theme-toggle input:checked + .slider .moon {
+    opacity: 1;
+}
+
+/* =========================
    Main Content
    ========================= */
 /* Style main semantic tag directly */
@@ -155,11 +286,12 @@ main {
 
 /* All sections inside main get consistent styling */
 main section {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 2rem;
     margin-bottom: 2rem;       /* Space between sections */
     border-radius: 8px;        /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px var(--shadow);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Style h2 headings inside sections */
@@ -405,11 +537,18 @@ footer {
     text-align: center;
     padding: 1.5rem;
     margin-top: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode footer {
+    background-color: #1a1a2e;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 footer a {
     color: var(--accent-color);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
@@ -444,8 +583,8 @@ footer a:hover {
         top: 100%;                   /* Position below nav bar */
         left: 0;
         right: 0;
-        background-color: #7a93c7;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: var(--nav-bg);
+        box-shadow: 0 4px 6px var(--shadow);
         padding: 1rem 0;
         gap: 0.5rem;
     }
@@ -465,6 +604,29 @@ footer a:hover {
         width: 100%;
         text-align: center;
         padding: 0.75rem 1rem;
+    }
+
+    /* Adjust theme toggle position on mobile */
+    .theme-toggle-wrapper {
+        right: 0.5rem;
+    }
+
+    .theme-toggle {
+        width: 50px;
+        height: 26px;
+    }
+
+    .slider::before {
+        height: 18px;
+        width: 18px;
+    }
+
+    .theme-toggle input:checked + .slider::before {
+        transform: translateX(24px);
+    }
+
+    .slider .icon {
+        font-size: 14px;
     }
 
     main section {
