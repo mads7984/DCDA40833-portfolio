@@ -56,17 +56,22 @@
                 <figcaption>Figure 1: Screenshot of the desktop view of the enhanced portfolio webpage with dark mode toggle. (Click image to enlarge)</figcaption>
             </figure>
 
+            <figure class="viz-container">
+                <a href="images\portfolioenhancementaipromptog.png" targets="_blank"><img src="images\portfolioenhancementaipromptrs.png" alt="Screenshot of the AI prompt used to generate the dark mode toggle code"></a>
+                <figcaption>Figure 2: Screenshot of the AI prompt used to generate the dark mode toggle code. (Click image to enlarge)</figcaption>
+            </figure>
+
             <h3>Challenges and Solutions</h3>
             <p>The first output AI generated set the toggle and menu as two separate elements. This didn't present any issues when viewing the webpage in desktop view, but when the screen was resized to mobile view, the toggle and collapsed menu overlapped. I asked AI to adjust the code to include the toggle within the menu itself, which resolved the issue and created a neater interface for mobile users.</p>
 
             <figure class="viz-container">
                 <a href="images\webpagemobileissueog.png" targets="_blank"><img src="images\webpagemobileissuers.png" alt="Screenshot of the mobile view of the webpage with the dark mode toggle issue"></a>
-                <figcaption>Figure 2: Screenshot of the mobile view of the enhanced portfolio webpage showing the dark mode toggle issue, where the toggle and collapsed menu overlap. (Click image to enlarge)</figcaption>
+                <figcaption>Figure 3: Screenshot of the mobile view of the enhanced portfolio webpage showing the dark mode toggle issue, where the toggle and collapsed menu overlap. (Click image to enlarge)</figcaption>
             </figure>
 
             <figure class="viz-container">
                 <a href="images\webpagemobilesolutionog.png" targets="_blank"><img src="images\webpagemobilesolutionrs.png" alt="Screenshot of the mobile view of the webpage with the dark mode toggle issue resolved"></a>
-                <figcaption>Figure 3: Screenshot of the mobile view of the enhanced portfolio webpage showing the dark mode toggle issue resolved, where the toggle is now integrated within the menu. (Click image to enlarge)</figcaption>
+                <figcaption>Figure 4: Screenshot of the mobile view of the enhanced portfolio webpage showing the dark mode toggle issue resolved, where the toggle is now integrated within the menu. (Click image to enlarge)</figcaption>
             </figure>
         </section>
         <section>
@@ -77,7 +82,7 @@
 
             <figure class="viz-container">
                 <a href="images\aipromptog.png" targets="_blank"><img src="images\aipromptrs.png" alt="Screenshot of the original prompt given to Claude"></a>
-                <figcaption>Figure 4: Screenshot of the original prompt I gave <strong>Claude</strong>, the AI integrated into Google Colab. (Click image to enlarge)</figcaption>
+                <figcaption>Figure 5: Screenshot of the original prompt I gave <strong>Claude</strong>, the AI integrated into Google Colab. (Click image to enlarge)</figcaption>
             </figure>
 
             <h3>Challenges and Solutions</h3>
@@ -86,17 +91,17 @@
             <h4>Cleaning Data</h4>
             <figure class="viz-container">
                 <a href="images\filtermergeog.png" targets="_blank"><img src="images\filtermergers.png" alt="Screenshot of how my original code merged datasets"></a>
-                <figcaption>Figure 5: Screenshot of how <strong>Claude</strong> initially filtered the datasets to prepare for the merge. (Click image to enlarge)</figcaption>
+                <figcaption>Figure 6: Screenshot of how <strong>Claude</strong> initially filtered the datasets to prepare for the merge. (Click image to enlarge)</figcaption>
             </figure>
 
             <figure class="viz-container">
                 <a href="images\ogopioidcleanog.png" targets="_blank"><img src="images\ogopioidcleanrs.png" alt="Screenshot of how my original code cleaned the opioid dataset"></a>
-                <figcaption>Figure 6: Screenshot of how my original code <strong>(human-written)</strong> cleaned the opioid dispensing data. (Click image to enlarge)</figcaption>
+                <figcaption>Figure 7: Screenshot of how my original code <strong>(human-written)</strong> cleaned the opioid dispensing data. (Click image to enlarge)</figcaption>
             </figure>
 
             <figure class="viz-container">
                 <a href="images\ogsvicleanog.png" targets="_blank"><img src="images\ogsvicleanrs.png" alt="Screenshot of how my original code cleaned the SVI dataset"></a>
-                <figcaption>Figure 7: Screenshot of how my original code <strong>(human-written)</strong> cleaned the Social Vulnerability Index (SVI) dataset. (Click image to enlarge)</figcaption>
+                <figcaption>Figure 8: Screenshot of how my original code <strong>(human-written)</strong> cleaned the Social Vulnerability Index (SVI) dataset. (Click image to enlarge)</figcaption>
             </figure>
 
             <p>My original code was more efficient and concise than the AI-generated code. I chose to isolate the DFW counties by FIPS codes in the opioid dispensing dataset and then I extracted FIPS codes, poverty data (EP_POV150), and unemployment data (EP_UNEMP) from the Social Vulnerability Index (SVI) dataset. My code did not require me to make a new DataFrame to isolate the DFW data, which made it very easy to keep track of my processes without juggling multiple DataFrames.</p>
@@ -106,12 +111,12 @@
             <h4>Merging Data</h4>
             <figure class="viz-container">
                 <a href="images\aimerge1og.png" targets="_blank"><img src="images\aimerge1rs.png" alt="Screenshot of the AI-generated code merging datasets"></a>
-                <figcaption>Figure 8: Screenshot of how <strong>Claude</strong> chose to approach merging datasets. (Click image to enlarge)</figcaption>
+                <figcaption>Figure 9: Screenshot of how <strong>Claude</strong> chose to approach merging datasets. (Click image to enlarge)</figcaption>
             </figure>
 
             <figure class="viz-container">
                 <a href="images\ogmergeog.png" targets="_blank"><img src="images\ogmergers.png" alt="Screenshot of how my original code merged datasets"></a>
-                <figcaption>Figure 9: Screenshot of how my original code <strong>(human-written)</strong> approached merging datasets. (Click image to enlarge)</figcaption>
+                <figcaption>Figure 10: Screenshot of how my original code <strong>(human-written)</strong> approached merging datasets. (Click image to enlarge)</figcaption>
             </figure>
             
             <p>After AI had merged the datasets, it did not effectively clean the data. The AI-generated code did not properly handle duplicate county names or FIPS codes, which led to inconsistencies in the merged dataset. This was fixable, but required additional prompting of the AI.</p>
@@ -120,22 +125,22 @@
 
             <figure class="viz-container">
                 <a href="images\countynamespromptog.png" targets="_blank"><img src="images\countynamespromptrs.png" alt="Screenshot of the prompt given to Claude to generate code to drop duplicate county name columns"></a>
-                <figcaption>Figure 10: Screenshot of the prompt given to <strong>Claude</strong> to generate code to drop duplicate county name columns. (Click image to enlarge)</figcaption>
+                <figcaption>Figure 11: Screenshot of the prompt given to <strong>Claude</strong> to generate code to drop duplicate county name columns. (Click image to enlarge)</figcaption>
             </figure>
 
             <figure class="viz-container">
                 <a href="images\countydropduplicatesog.png" targets="_blank"><img src="images\countydropduplicatesrs.png" alt="Screenshot of how my original code merged datasets"></a>
-                <figcaption>Figure 11: Screenshot of how the code generated by <strong>Claude</strong> dropped duplicate county name columns. (Click image to enlarge)</figcaption>
+                <figcaption>Figure 12: Screenshot of how the code generated by <strong>Claude</strong> dropped duplicate county name columns. (Click image to enlarge)</figcaption>
             </figure>
 
             <figure class="viz-container">
                 <a href="images\fipspromptog.png" targets="_blank"><img src="images\fipspromptrs.png" alt="Screenshot of the prompt given to Claude to generate code to merge FIPS codes"></a>
-                <figcaption>Figure 12: Screenshot of the prompt given to <strong>Claude</strong> to generate code to merge FIPS codes. (Click image to enlarge)</figcaption>
+                <figcaption>Figure 13: Screenshot of the prompt given to <strong>Claude</strong> to generate code to merge FIPS codes. (Click image to enlarge)</figcaption>
             </figure>
 
             <figure class="viz-container">
                 <a href="images\fipsdropduplicatesog.png" targets="_blank"><img src="images\fipsdropduplicatesrs.png" alt="Screenshot of how my original code merged datasets"></a>
-                <figcaption>Figure 13: Screenshot of how the code generated by <strong>Claude</strong> dropped duplicate FIPS codes. (Click image to enlarge)</figcaption>
+                <figcaption>Figure 14: Screenshot of how the code generated by <strong>Claude</strong> dropped duplicate FIPS codes. (Click image to enlarge)</figcaption>
             </figure>
 
             <p>After continuously preparing the data, the AI-generated code was able to run an OLS regression model and provided the same results as my original project.</p>
@@ -144,40 +149,25 @@
 
             <figure class="viz-container">
                 <a href="images\olsinterpretation1og.png" targets="_blank"><img src="images\olsinterpretation2rs.png" alt="Screenshot of how my original code merged datasets"></a>
-                <figcaption>Figure 14: Screenshot of the OLS regression interpretation generated by <strong>Claude's</strong> AI code. (Click image to enlarge)</figcaption>
+                <figcaption>Figure 15: Screenshot of the OLS regression interpretation generated by <strong>Claude's</strong> AI code. (Click image to enlarge)</figcaption>
             </figure>
             
         </section>
 
         <section>
             <h2>Critical Reflection</h2>
-            
-            <h3>Technical Understanding</h3>
-            <p></p>
-            
-            <p><strong>How does it work?</strong> Explain the key logic or mechanisms. Where did you land on the understanding spectrum? If there are parts you still don't fully understand after trying, say so...</p>
-            
-            <p><strong>What did you modify?</strong> Did you need to fix bugs, adjust styling, or change functionality? Why?...</p>
-
-            <h3>Process Evaluation</h3>
-            <p><strong>When was AI helpful?</strong> What tasks did it accelerate or simplify?...</p>
-            
-            <p><strong>When was AI problematic?</strong> Where did it produce incorrect, inefficient, or unnecessarily complex code?...</p>
-            
-            <p><strong>What's your role?</strong> In an AI-assisted workflow, what remains uniquely human? What can't (or shouldn't) be automated?...</p>
-
-            <h3>Ethical & Pedagogical Considerations</h3>
-            <p><strong>Learning trade-offs:</strong> Does vibe coding help or hinder your development as a programmer? Under what conditions?...</p>
-            
-            <p><strong>Attribution:</strong> When using AI-generated code, what does proper citation look like? (Consider academic vs. professional contexts)...</p>
-            
-            <p><strong>Your guidelines:</strong> What personal rules will you follow for using AI in coding? When will you use it? When won't you?...</p>
+       
+            <p>I believe vibe coding can help programmer development under the condition that the code is closely examined after being generated, going line by line, evaluating understanding, and being able to explain what exactly the generated code does. If vibe coding is used, but not closely evaluated once generated, there is no room for development as a programmer. Proper citation for AI-generated code within the code includes comments that explicit state which parts of the code are AI-generated. Outside of comments within code, proper citation does look like explicitly stating which part of the code is AI-generated, but also explaining how the generated code works, how much was initially understood, how understanding was developed, and how the code will assist in future programming. In my personal use, if I am struggling to figure out how to approach a certain task, I will use AI coding, but I will go line by line to understand how the code was developed, what it means, and learn from it. For coding tasks that have already been outlined in a lecture or have been done in previous projects, I will not use AI to assist coding because using AI would hinder my ability to understand through practice. </p>
+           
         </section>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 Madeline Gordy | <a href="https://github.com/yourusername/DCDA40833-portfolio">GitHub</a> | <a href="#">GitHub Repository</a></p>
+        <p>&copy; 2026 Madeline Gordy | <a href="https://github.com/mads7984/DCDA40833-portfolio">GitHub</a> | <a href="#">GitHub Repository</a></p>
     </footer>
+
+    <!-- Navigation JavaScript -->
+    <script src="js/navigation.js"></script>
 </body>
 </html>
