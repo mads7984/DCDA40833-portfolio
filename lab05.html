@@ -62,44 +62,90 @@
             </figure>
         </section>
         <section>
-            <h2>Experiment Overview</h2>
-            <p>Brief description of which experiment(s) you completed and what you built/analyzed...</p>
-            
-            <!-- Screenshot or demo of working feature -->
-            <figure>
-                <img src="images/lab5-demo.png" alt="Screenshot of working feature">
-                <figcaption>Figure 1: [Description of what's shown]</figcaption>
+            <h2>Experiment #2: Python Code Generation</h2>
+
+            <h3>Experiment Overview</h3>
+            <p>For this experiment, I took a project I did in a previous class where I compared opioid dispensing rates and the Social Vulnerability Index (SVI) for different counties in DFW and used AI to complete the same tasks I completed in that project. The goal was to see how AI would compare to my human work in the original project, would it be more complicated? Would it make the process faster or more efficient?</p>
+
+            <figure class="viz-container">
+                <a href="images\aipromptog.png" targets="_blank"><img src="images\aipromptrs.png" alt="Screenshot of the original prompt given to Claude"></a>
+                <figcaption>Figure 4: Screenshot of the original prompt I gave <strong>Claude</strong>, the AI integrated into Google Colab. (Click image to enlarge)</figcaption>
             </figure>
-        </section>
 
-        <section>
-            <h2>Key Code Snippet</h2>
-            <p>Below is a key section of the AI-generated code with comments using the understanding spectrum:</p>
+            <h3>Challenges and Solutions</h3>
+            <p>Compared to my original project, the AI-generated code was not as efficient. Simple processes such as cleaning and merging the data took more steps than in the human generated code, and it required several prompts to achieve the desired outcome. Luckily, I had my original project to compare outputs, which helped me identify and correct issues within the AI-generated code when it came to cleaning.</p>
             
-            <pre><code>
-&lt;!-- Example structure for commented code --&gt;
-&lt;!-- I understand the logic: This function toggles dark mode by switching CSS classes --&gt;
-function toggleDarkMode() {
-    // I wrote this: Added event listener for the button click
-    document.body.classList.toggle('dark-mode');
-    
-    // I understand what it does but not how: This localStorage part saves preference
-    // The syntax with JSON.stringify is still fuzzy to me
-    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-}
+            <h4>Cleaning Data</h4>
+            <figure class="viz-container">
+                <a href="images\filtermergeog.png" targets="_blank"><img src="images\filtermergers.png" alt="Screenshot of how my original code merged datasets"></a>
+                <figcaption>Figure 5: Screenshot of how <strong>Claude</strong> initially filtered the datasets to prepare for the merge. (Click image to enlarge)</figcaption>
+            </figure>
 
-// I don't understand this: The next section handles something with cookies?
-// After asking AI to explain: Now I understand it's checking saved preferences on page load
-            </code></pre>
+            <figure class="viz-container">
+                <a href="images\ogopioidcleanog.png" targets="_blank"><img src="images\ogopioidcleanrs.png" alt="Screenshot of how my original code cleaned the opioid dataset"></a>
+                <figcaption>Figure 6: Screenshot of how my original code <strong>(human-written)</strong> cleaned the opioid dispensing data. (Click image to enlarge)</figcaption>
+            </figure>
+
+            <figure class="viz-container">
+                <a href="images\ogsvicleanog.png" targets="_blank"><img src="images\ogsvicleanrs.png" alt="Screenshot of how my original code cleaned the SVI dataset"></a>
+                <figcaption>Figure 7: Screenshot of how my original code <strong>(human-written)</strong> cleaned the Social Vulnerability Index (SVI) dataset. (Click image to enlarge)</figcaption>
+            </figure>
+
+            <p>My original code was more efficient and concise than the AI-generated code. I chose to isolate the DFW counties by FIPS codes in the opioid dispensing dataset and then I extracted FIPS codes, poverty data (EP_POV150), and unemployment data (EP_UNEMP) from the Social Vulnerability Index (SVI) dataset. My code did not require me to make a new DataFrame to isolate the DFW data, which made it very easy to keep track of my processes without juggling multiple DataFrames.</p>
+
+            <p>On the other hand, the AI-generated code was more complicated, required more steps to reach the same end-result, and was less readable. The AI-generated code created multiple DataFrames to isolate the data, which made it hard to follow when reviewing the generated code. As seen through the compared code, there was a much simpler approach that I had taken in my original code.</p>
             
-            <p><strong>Note:</strong> Comments reflect my honest understanding at each point in the code.</p>
+            <h4>Merging Data</h4>
+            <figure class="viz-container">
+                <a href="images\aimerge1og.png" targets="_blank"><img src="images\aimerge1rs.png" alt="Screenshot of the AI-generated code merging datasets"></a>
+                <figcaption>Figure 8: Screenshot of how <strong>Claude</strong> chose to approach merging datasets. (Click image to enlarge)</figcaption>
+            </figure>
+
+            <figure class="viz-container">
+                <a href="images\ogmergeog.png" targets="_blank"><img src="images\ogmergers.png" alt="Screenshot of how my original code merged datasets"></a>
+                <figcaption>Figure 9: Screenshot of how my original code <strong>(human-written)</strong> approached merging datasets. (Click image to enlarge)</figcaption>
+            </figure>
+            
+            <p>After AI had merged the datasets, it did not effectively clean the data. The AI-generated code did not properly handle duplicate county names or FIPS codes, which led to inconsistencies in the merged dataset. This was fixable, but required additional prompting of the AI.</p>
+
+            <h4>Further Cleaning of AI-Merged Data</h4>
+
+            <figure class="viz-container">
+                <a href="images\countynamespromptog.png" targets="_blank"><img src="images\countynamespromptrs.png" alt="Screenshot of the prompt given to Claude to generate code to drop duplicate county name columns"></a>
+                <figcaption>Figure 10: Screenshot of the prompt given to <strong>Claude</strong> to generate code to drop duplicate county name columns. (Click image to enlarge)</figcaption>
+            </figure>
+
+            <figure class="viz-container">
+                <a href="images\countydropduplicatesog.png" targets="_blank"><img src="images\countydropduplicatesrs.png" alt="Screenshot of how my original code merged datasets"></a>
+                <figcaption>Figure 11: Screenshot of how the code generated by <strong>Claude</strong> dropped duplicate county name columns. (Click image to enlarge)</figcaption>
+            </figure>
+
+            <figure class="viz-container">
+                <a href="images\fipspromptog.png" targets="_blank"><img src="images\fipspromptrs.png" alt="Screenshot of the prompt given to Claude to generate code to merge FIPS codes"></a>
+                <figcaption>Figure 12: Screenshot of the prompt given to <strong>Claude</strong> to generate code to merge FIPS codes. (Click image to enlarge)</figcaption>
+            </figure>
+
+            <figure class="viz-container">
+                <a href="images\fipsdropduplicatesog.png" targets="_blank"><img src="images\fipsdropduplicatesrs.png" alt="Screenshot of how my original code merged datasets"></a>
+                <figcaption>Figure 13: Screenshot of how the code generated by <strong>Claude</strong> dropped duplicate FIPS codes. (Click image to enlarge)</figcaption>
+            </figure>
+
+            <p>After continuously preparing the data, the AI-generated code was able to run an OLS regression model and provided the same results as my original project.</p>
+
+            <h4>OLS Regression Interpretation</h4>
+
+            <figure class="viz-container">
+                <a href="images\olsinterpretation1og.png" targets="_blank"><img src="images\olsinterpretation2rs.png" alt="Screenshot of how my original code merged datasets"></a>
+                <figcaption>Figure 14: Screenshot of the OLS regression interpretation generated by <strong>Claude's</strong> AI code. (Click image to enlarge)</figcaption>
+            </figure>
+            
         </section>
 
         <section>
             <h2>Critical Reflection</h2>
             
             <h3>Technical Understanding</h3>
-            <p><strong>What code did the AI generate?</strong> Describe the feature/function in your own words...</p>
+            <p></p>
             
             <p><strong>How does it work?</strong> Explain the key logic or mechanisms. Where did you land on the understanding spectrum? If there are parts you still don't fully understand after trying, say so...</p>
             
@@ -120,36 +166,10 @@ function toggleDarkMode() {
             <p><strong>Your guidelines:</strong> What personal rules will you follow for using AI in coding? When will you use it? When won't you?...</p>
         </section>
 
-        <section>
-            <h2>Vibe Coding Guidelines</h2>
-            <p>Based on this experiment, here are my personal guidelines for when and how to use AI in development:</p>
-            <ul>
-                <li><strong>I will use AI when:</strong> [List situations where AI is appropriate]</li>
-                <li><strong>I will not use AI when:</strong> [List situations where you'll avoid AI]</li>
-                <li><strong>I will always:</strong> [List non-negotiable practices like commenting, testing, etc.]</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Original AI Prompts & Output</h2>
-            <p><strong>Prompt 1:</strong> [Copy your original prompt here]</p>
-            <p><strong>AI Response:</strong></p>
-            <pre><code>
-[Paste AI's initial output here]
-            </code></pre>
-            
-            <p><strong>Follow-up Prompt:</strong> [If applicable]</p>
-            <p><strong>AI Response:</strong></p>
-            <pre><code>
-[Paste follow-up output here]
-            </code></pre>
-            
-            <p><strong>Link to Google Colab notebook:</strong> <a href="#">[Link to your .ipynb file if applicable]</a></p>
-        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Your Name | <a href="https://github.com/yourusername/DCDA40833-portfolio">GitHub</a> | <a href="#">GitHub Repository</a></p>
+        <p>&copy; 2026 Madeline Gordy | <a href="https://github.com/yourusername/DCDA40833-portfolio">GitHub</a> | <a href="#">GitHub Repository</a></p>
     </footer>
 </body>
 </html>
