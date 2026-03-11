@@ -34,3 +34,6 @@ __pycache__/
 # Do NOT ignore these:
 !images/.gitkeep
 archive/
+
+# Mapbox token file
+.env

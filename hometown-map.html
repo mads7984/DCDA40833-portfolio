@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Skills Portfolio showcasing work from DCDA 40833">
+    <meta name="author" content="Madeline Gordy">
+    <title>Madeline Gordy | DCDA 40833 Skills Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation: Links to all portfolio pages -->
+    <nav>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lab02.html">Lab 2: AI Evaluation</a></li>
+            <li><a href="lab03.html">Lab 3: Visualization Critique</a></li>
+            <li><a href="lab04.html">Lab 4: Tableau Visualization</a></li>
+            <li><a href="lab05.html">Lab 5: Vibe Coding</a></li>
+            <li><a href="hometown-map.html" class="active">Lab 6: Hometown Map</a></li>
+            <!-- Dark Mode Toggle -->
+            <!-- After experiencing formatting issues whenever the screen was adjusted to 768px, AI generated code that added the toggle as a menu option. Whenever the menu is collapsed, the toggle is collapsed inside the menu alongside the links to different labs -->
+            <li class="theme-toggle-wrapper">
+                <!-- I had to do a little more research on the label tag because I was confused about what it does. I found out that it is used to associate a label with an input element for accessibility purposes. It allows the entire component to be clicked which toggles the check box that completes the task of switching which visual mode the webpage is on -->
+                <label class="theme-toggle" for="theme-switch" aria-label="Toggle dark mode">
+                    <!-- This is the checkbox assigned to the function of toggling dark mode and light mode -->
+                    <input type="checkbox" id="theme-switch" />
+                    <!-- Creates the visual slider element -->
+                    <span class="slider">
+                        <!-- Creates the visual icon for the sun as light mode and the moon as dark mode. This is done by using the styling hook for positioning and including the symbols that indicate whether the webpage is on dark mode or light mode -->
+                        <span class="icon sun">☀️</span>
+                        <span class="icon moon">🌙</span>
+                    </span>
+                </label>
+            </li>
+        </ul>
+    </nav>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_815ab636e0bfd70da7197a8785ebf630 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_815ab636e0bfd70da7197a8785ebf630" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_815ab636e0bfd70da7197a8785ebf630 = L.map(
+                "map_815ab636e0bfd70da7197a8785ebf630",
+                {
+                    center: [39.4090557, -77.42548880000001],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b30dbb3a6238c8b02bc7ddb6b3db0c5d = L.tileLayer(
+                "https://api.mapbox.com/styles/v1/mgordy/cmmk2hq74002p01s17m3cg2iw/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWdvcmR5IiwiYSI6ImNtbHRta3djcDAxdjIzZXBwZ2lxMGJteWMifQ.LBi7wAKC4Hp2xBkO7Oe_TA",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Mapbox",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b30dbb3a6238c8b02bc7ddb6b3db0c5d.addTo(map_815ab636e0bfd70da7197a8785ebf630);
+        
+    
+            var marker_6529b54863dc37b140495cb2bba834a3 = L.marker(
+                [39.399952, -77.348512],
+                {
+}
+            ).addTo(map_815ab636e0bfd70da7197a8785ebf630);
+        
+    
+            var icon_4845b2e4ec02f8b6b0a28d02a72b22f3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_de0c687630c821b6c2a66dcb7e914c9b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2cbb0199cff69d4dc9fe7642198c1396 = $(`<div id="html_2cbb0199cff69d4dc9fe7642198c1396" style="width: 100.0%; height: 100.0%;">     <h4>Spring Ridge Community Pool</h4>     <p>This is the neighborhood pool for Spring Ridge, the neighborhood I grew up in. There was a summer league swim team that I swam on every summer, and that was how I found my love for swimming! The facility has 4 pools, a diving board, lap swimming lanes, and even a small waterslide!</p>     <img src="https://ap.rdcpix.com/6f36eb9d6133d741533f9607587eabc8l-m3497276798rd-w1280_h960.webp" width="200px">     </div>`)[0];
+                popup_de0c687630c821b6c2a66dcb7e914c9b.setContent(html_2cbb0199cff69d4dc9fe7642198c1396);
+            
+        
+
+        marker_6529b54863dc37b140495cb2bba834a3.bindPopup(popup_de0c687630c821b6c2a66dcb7e914c9b)
+        ;
+
+        
+    
+    
+                marker_6529b54863dc37b140495cb2bba834a3.setIcon(icon_4845b2e4ec02f8b6b0a28d02a72b22f3);
+            
+    
+            var marker_bc774c94bccffef20fec8d1fe9d22a20 = L.marker(
+                [39.413831, -77.40859],
+                {
+}
+            ).addTo(map_815ab636e0bfd70da7197a8785ebf630);
+        
+    
+            var icon_aad12e39122ec580cda061b3ccf2da4e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "book",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_82111816c34d25aef081294065cec07b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bdbce8c3e4eeec4d3133b38783cdf527 = $(`<div id="html_bdbce8c3e4eeec4d3133b38783cdf527" style="width: 100.0%; height: 100.0%;">     <h4>C. Burr Artz Public Library</h4>     <p>The C. Burr Artz Public Library is located along the Carroll Creek in downtown Frederick! The library has information in all medias from books to videos, and the architecture of the building is nothing like you've seen in other libraries!</p>     <img src="https://assets.simpleviewinc.com/simpleview/image/fetch/q_75/https://assets.simpleviewinc.com/simpleview/image/upload/crm/frederickcountymd/library0-747d71365056a36_747d7240-5056-a36a-07130a27b3b37b85.jpg" width="200px">     </div>`)[0];
+                popup_82111816c34d25aef081294065cec07b.setContent(html_bdbce8c3e4eeec4d3133b38783cdf527);
+            
+        
+
+        marker_bc774c94bccffef20fec8d1fe9d22a20.bindPopup(popup_82111816c34d25aef081294065cec07b)
+        ;
+
+        
+    
+    
+                marker_bc774c94bccffef20fec8d1fe9d22a20.setIcon(icon_aad12e39122ec580cda061b3ccf2da4e);
+            
+    
+            var marker_b2714c5b9f35385cac386841bd2af2d4 = L.marker(
+                [39.4124, -77.407722],
+                {
+}
+            ).addTo(map_815ab636e0bfd70da7197a8785ebf630);
+        
+    
+            var icon_459cb60abb61b65ac254bb733a37cdd8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "paint-brush",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_59d4feacd46a0d45c41a4e4c38b3c201 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6e08d621be36c77742c8aa1f7dfc92db = $(`<div id="html_6e08d621be36c77742c8aa1f7dfc92db" style="width: 100.0%; height: 100.0%;">     <h4>Delaplaine Arts Center</h4>     <p>The Delaplaine is the art hub of Frederick, featuring galleries, studios, classes, and family programs. They feature work from local and regional artists, but also include art from the schools in the area as well! When I was in elementary school, one of my art projects was featured in their gallery!</p>     <img src="https://assets.simpleviewcms.com/simpleview/image/fetch/q_75/https://res.cloudinary.com/simpleview/image/upload/crm/frederickcountymd/DSC09951_B2FBCF10-CCA9-406A-8504808FBAD05E08_b215193a-1963-4197-aba769e3de95cfd6.jpg" width="200px">     </div>`)[0];
+                popup_59d4feacd46a0d45c41a4e4c38b3c201.setContent(html_6e08d621be36c77742c8aa1f7dfc92db);
+            
+        
+
+        marker_b2714c5b9f35385cac386841bd2af2d4.bindPopup(popup_59d4feacd46a0d45c41a4e4c38b3c201)
+        ;
+
+        
+    
+    
+                marker_b2714c5b9f35385cac386841bd2af2d4.setIcon(icon_459cb60abb61b65ac254bb733a37cdd8);
+            
+    
+            var marker_498ac375d0a4f3f2cf0a7ff8462407ee = L.marker(
+                [39.416646, -77.414544],
+                {
+}
+            ).addTo(map_815ab636e0bfd70da7197a8785ebf630);
+        
+    
+            var icon_3373a2e7503933f29154634d602eed9a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tree-conifer",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cb0294fe9540d26ac304a5ba3c164802 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fd475aa3b054165410b1ee005fd686cd = $(`<div id="html_fd475aa3b054165410b1ee005fd686cd" style="width: 100.0%; height: 100.0%;">     <h4>Baker Park</h4>     <p>Baker Park is a 58 acre park in the heart of downtown and includes jogging and bike paths, playgrounds, a lake, and even a venue for concerts, events, and festivals! My favorite memory as a child was feeding the duck in the lake every Sunday!</p>     <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/baker-park-carrilon-frederick-md-david-smith.jpg" width="200px">     </div>`)[0];
+                popup_cb0294fe9540d26ac304a5ba3c164802.setContent(html_fd475aa3b054165410b1ee005fd686cd);
+            
+        
+
+        marker_498ac375d0a4f3f2cf0a7ff8462407ee.bindPopup(popup_cb0294fe9540d26ac304a5ba3c164802)
+        ;
+
+        
+    
+    
+                marker_498ac375d0a4f3f2cf0a7ff8462407ee.setIcon(icon_3373a2e7503933f29154634d602eed9a);
+            
+    
+            var marker_b96941d2eedf6edda534173d01422bf3 = L.marker(
+                [39.413085, -77.40989],
+                {
+}
+            ).addTo(map_815ab636e0bfd70da7197a8785ebf630);
+        
+    
+            var icon_9f4b2f128652d9675e3c0c9a16b5d7d2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "leaf",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dbef1a546fa5a109aa12797b36510d77 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3d15dfa3dfa9791b8d18085d078dd116 = $(`<div id="html_3d15dfa3dfa9791b8d18085d078dd116" style="width: 100.0%; height: 100.0%;">     <h4>Carroll Creek Park</h4>     <p>Carroll Creek Park runs through downtown Frederick and along the river there are many local shops and restaurants. It's a great place for jogging, catching up with a friend, and shopping all while enjoying the beautiful view!</p>     <img src="https://assets.simpleviewinc.com/sv-frederick-county/image/upload/c_fill,f_avif,h_853,q_65,w_1920/v1/cms_resources/clients/frederickcountymd-redesign/Carroll_Creek_Downtown_Frederick_2c35f560-a575-4f41-be62-35e82b5d793b.jpg" width="200px">     </div>`)[0];
+                popup_dbef1a546fa5a109aa12797b36510d77.setContent(html_3d15dfa3dfa9791b8d18085d078dd116);
+            
+        
+
+        marker_b96941d2eedf6edda534173d01422bf3.bindPopup(popup_dbef1a546fa5a109aa12797b36510d77)
+        ;
+
+        
+    
+    
+                marker_b96941d2eedf6edda534173d01422bf3.setIcon(icon_9f4b2f128652d9675e3c0c9a16b5d7d2);
+            
+    
+            var marker_810563d389638a6d08d5671cf48bf322 = L.marker(
+                [39.405971, -77.639799],
+                {
+}
+            ).addTo(map_815ab636e0bfd70da7197a8785ebf630);
+        
+    
+            var icon_95a27c58bf5e462eb78c84d825ff0d7d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tree-conifer",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8564e1422f672d6edacd6c2b5caaf794 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_efe2454ddb9263fa34ad552351c219d6 = $(`<div id="html_efe2454ddb9263fa34ad552351c219d6" style="width: 100.0%; height: 100.0%;">     <h4>Gathland State Park</h4>     <p>This beautiful park is perfect for hikes and backpacking trips, with an entrance to the Appalachian Trail! Hiking is one of my favorite things to do with my sister and friends, and Gathland State Park was a popular place for us to go.</p>     <img src="https://www.housewivesoffrederickcounty.com/wp-content/uploads/2020/05/National-War-Correspondents-Memorial-Arch2.jpg" width="200px">     </div>`)[0];
+                popup_8564e1422f672d6edacd6c2b5caaf794.setContent(html_efe2454ddb9263fa34ad552351c219d6);
+            
+        
+
+        marker_810563d389638a6d08d5671cf48bf322.bindPopup(popup_8564e1422f672d6edacd6c2b5caaf794)
+        ;
+
+        
+    
+    
+                marker_810563d389638a6d08d5671cf48bf322.setIcon(icon_95a27c58bf5e462eb78c84d825ff0d7d);
+            
+    
+            var marker_bdc3012cdfd1ad6faa3a01e8ec90bb72 = L.marker(
+                [39.413881, -77.40932],
+                {
+}
+            ).addTo(map_815ab636e0bfd70da7197a8785ebf630);
+        
+    
+            var icon_587eb770d554abc547feb62d276cd29e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a01f789e176dc86befb88987b615181e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8f30a774a5dced1b5ef6e59b06c56544 = $(`<div id="html_8f30a774a5dced1b5ef6e59b06c56544" style="width: 100.0%; height: 100.0%;">     <h4>Civil War Medicine Museum</h4>     <p>Not only is the Civil War Museum a great stop for any history lovers, it's also significant to capturing the pivotal role Maryland's border towns in shaping the American Civil War. This museum introduced me to more of Maryland's history beyond what my history classes taught me!</p>     <img src="https://www.marylandhauntedhouses.com/real-haunt-photo/national-museum-civil-war-medicine_3475.jpg" width="200px">     </div>`)[0];
+                popup_a01f789e176dc86befb88987b615181e.setContent(html_8f30a774a5dced1b5ef6e59b06c56544);
+            
+        
+
+        marker_bdc3012cdfd1ad6faa3a01e8ec90bb72.bindPopup(popup_a01f789e176dc86befb88987b615181e)
+        ;
+
+        
+    
+    
+                marker_bdc3012cdfd1ad6faa3a01e8ec90bb72.setIcon(icon_587eb770d554abc547feb62d276cd29e);
+            
+    
+            var marker_86024912d421886df2814feee30c3e69 = L.marker(
+                [39.416996, -77.405265],
+                {
+}
+            ).addTo(map_815ab636e0bfd70da7197a8785ebf630);
+        
+    
+            var icon_556febf578ce8f5e36dab9675d6ef4e7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7f2a18afdc826880c49263006a580a7c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_32b67531f534946bb87c5b85b9919d35 = $(`<div id="html_32b67531f534946bb87c5b85b9919d35" style="width: 100.0%; height: 100.0%;">     <h4>Pistarro's</h4>     <p>Pistarro's is an Italian restaurant local to Frederick, serving pizza, pasta, and salumi. The ambient lighting and live music are the perfect atmosphere for a night out!</p>     <img src="https://imagescdn.homes.com/i2/8K5pbnZB0QBG4NRpE5ctEI0vGOWcPCI19LGUhjM7B20/117/carrollton-frederick-md.jpg?p=1" width="200px">     </div>`)[0];
+                popup_7f2a18afdc826880c49263006a580a7c.setContent(html_32b67531f534946bb87c5b85b9919d35);
+            
+        
+
+        marker_86024912d421886df2814feee30c3e69.bindPopup(popup_7f2a18afdc826880c49263006a580a7c)
+        ;
+
+        
+    
+    
+                marker_86024912d421886df2814feee30c3e69.setIcon(icon_556febf578ce8f5e36dab9675d6ef4e7);
+            
+    
+            var marker_66c052035ec402846fb66774b7f90306 = L.marker(
+                [39.382655, -77.405886],
+                {
+}
+            ).addTo(map_815ab636e0bfd70da7197a8785ebf630);
+        
+    
+            var icon_20ea9098ab425054122fa3a371a6c6c6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "shopping-bag",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6953953098cc793188a018eef2d1fc1b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_224435d1625599a5642bfe42a26f2daf = $(`<div id="html_224435d1625599a5642bfe42a26f2daf" style="width: 100.0%; height: 100.0%;">     <h4>Francis Scott Key Mall</h4>     <p>Francis Scott Key Mall, named after the Frederick native and author of The Star Spangled Banner, Francis Scott Key. This small mall packs a brunch with an array of stores without being overcrowded. If you make a wish while throwing a penny into the fountain, it is said that your wish will come true!</p>     <img src="https://live.staticflickr.com/65535/53912043854_1935b00c11_h.jpg" width="200px">     </div>`)[0];
+                popup_6953953098cc793188a018eef2d1fc1b.setContent(html_224435d1625599a5642bfe42a26f2daf);
+            
+        
+
+        marker_66c052035ec402846fb66774b7f90306.bindPopup(popup_6953953098cc793188a018eef2d1fc1b)
+        ;
+
+        
+    
+    
+                marker_66c052035ec402846fb66774b7f90306.setIcon(icon_20ea9098ab425054122fa3a371a6c6c6);
+            
+    
+            var marker_db4de6ad488c333d2f6166a6ad74d924 = L.marker(
+                [39.41514, -77.40536],
+                {
+}
+            ).addTo(map_815ab636e0bfd70da7197a8785ebf630);
+        
+    
+            var icon_786a27ee6199e21d6b06f91685eac5c5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "coffee",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_312e40bcf19704d85bcc540a91aeb3ea = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_79d780db0a8d8f18ea7bf2cb5e0a47b9 = $(`<div id="html_79d780db0a8d8f18ea7bf2cb5e0a47b9" style="width: 100.0%; height: 100.0%;">     <h4>Frederick Fudge & Ice Cream Co</h4>     <p>Frederick Fudge & Ice Cream Co is your one stop shot for any sweet cravings. Don't like ice cream? No worries! They also sell fudge and chocolate, so there's something for everyone! Getting ice cream there every Friday is my favorite tradition with my sister!</p>     <img src="https://media-cdn.tripadvisor.com/media/photo-s/0b/ec/7b/22/frederick-fudge-ice-cream.jpg" width="200px">     </div>`)[0];
+                popup_312e40bcf19704d85bcc540a91aeb3ea.setContent(html_79d780db0a8d8f18ea7bf2cb5e0a47b9);
+            
+        
+
+        marker_db4de6ad488c333d2f6166a6ad74d924.bindPopup(popup_312e40bcf19704d85bcc540a91aeb3ea)
+        ;
+
+        
+    
+    
+                marker_db4de6ad488c333d2f6166a6ad74d924.setIcon(icon_786a27ee6199e21d6b06f91685eac5c5);
+            
+</script>
+</html>
