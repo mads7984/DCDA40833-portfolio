@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Skills Portfolio showcasing work from DCDA 40833">
+    <meta name="description" content="Interactive Hometown Map - DCDA 40833 Lab 6">
     <meta name="author" content="Madeline Gordy">
-    <title>Madeline Gordy | DCDA 40833 Skills Portfolio</title>
+    <title>Madeline Gordy | DCDA 40833 Lab 6: Hometown Map</title>
+    
+    <!-- Leaflet and Map Libraries CSS - Load before custom CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+    <!-- Custom Portfolio CSS - Load last to override library styles -->
     <link rel="stylesheet" href="css/styles.css">
+    
+ 
 </head>
 <body>
     <!-- Navigation: Links to all portfolio pages -->
@@ -40,64 +51,171 @@
             </li>
         </ul>
     </nav>
-<head>
-    
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <header>
+        <h1>Hometown Map: Frederick, Maryland</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Frederick Interactive Map</h2>
+            <p>Explore my favorite places in Frederick! Click on the markers to learn more about each location.</p>
+            
+            <div class="map-container">
+                <div class="folium-map" id="map_815ab636e0bfd70da7197a8785ebf630"></div>
+            </div>
+        </section>
+
+        <section id="reflection">
+            <h2>Lab 6 Reflection</h2>
+            <p> You can read my full reflection here:
+            <a href="Hometown Map Reflection.pdf" target="_blank">Download Reflection PDF</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Madeline Gordy | <a href="https://github.com/mads7984/DCDA40833-portfolio">GitHub</a></p>
+    </footer>
+
+         <style>
+        /* Override external library styles to prevent global effects */
+        /* BUT exclude map elements from these overrides */
+        
+        /* Reset any external library modifications to HTML/body */
+        html {
+            font-size: 16px !important;
+            line-height: normal !important;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+            font-size: 1rem !important;
+            line-height: 1.6 !important;
+        }
+        
+        /* Ensure nav isn't affected by external styles */
+        nav:not(.leaflet-container):not(.leaflet-control), 
+        nav *:not(.leaflet-container *):not(.leaflet-control *) {
+            font-family: inherit !important;
+            font-size: inherit !important;
+            line-height: inherit !important;
+        }
+        
+        /* Ensure header isn't affected */
+        header:not(.leaflet-container):not(.leaflet-control), 
+        header *:not(.leaflet-container *):not(.leaflet-control *) {
+            font-family: inherit !important;
+            line-height: inherit !important;
+        }
+        
+        /* Ensure main content isn't affected, EXCEPT map container */
+        main *:not(.map-container):not(.map-container *):not(.leaflet-container):not(.leaflet-container *):not(.leaflet-control):not(.leaflet-control *):not([class*="leaflet"]):not([class*="awesome-marker"]) {
+            font-family: inherit !important;
+            line-height: inherit !important;
+        }
+        
+        /* Don't let external styles affect headers, except in map */
+        h1:not(.leaflet-container *):not(.leaflet-control *), 
+        h2:not(.leaflet-container *):not(.leaflet-control *), 
+        h3:not(.leaflet-container *):not(.leaflet-control *), 
+        h4:not(.leaflet-container *):not(.leaflet-control *), 
+        h5:not(.leaflet-container *):not(.leaflet-control *), 
+        h6:not(.leaflet-container *):not(.leaflet-control *) {
+            font-family: inherit !important;
+            line-height: inherit !important;
+        }
+        
+        /* Don't let external styles affect paragraphs, except in map */
+        p:not(.leaflet-container *):not(.leaflet-control *) {
+            font-family: inherit !important;
+            font-size: inherit !important;
+            line-height: inherit !important;
+        }
+        
+        /* Map-specific Leaflet styles - scoped to map container only */
+        #map_815ab636e0bfd70da7197a8785ebf630 {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 600px;
+        }
+        
+        .leaflet-container { 
+            font-size: 1rem; 
+        }
+        
+        /* Ensure map icons display properly */
+        .map-container, 
+        .map-container *, 
+        .leaflet-container, 
+        .leaflet-container *,
+        .awesome-marker,
+        .awesome-marker *,
+        .awesome-marker i,
+        .awesome-marker .fa,
+        .awesome-marker .glyphicon,
+        .leaflet-marker-icon .fa,
+        .leaflet-marker-icon .glyphicon,
+        .fa,
+        .glyphicon,
+        [class*="fa-"],
+        [class*="glyphicon-"] {
+            font-family: inherit;
+            line-height: inherit;
+        }
+        
+        /* FIX: Ensure icon fonts load properly for map markers */
+        .awesome-marker .fa,
+        .awesome-marker .glyphicon,
+        .leaflet-marker-icon .fa,
+        .leaflet-marker-icon .glyphicon,
+        .fa,
+        .glyphicon {
+            font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", "FontAwesome", "Glyphicons Halflings", sans-serif !important;
+            font-weight: 900 !important;
+            speak: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Specifically target Font Awesome icons */
+        .fa {
+            font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", "FontAwesome", sans-serif !important;
+        }
+        
+        /* Specifically target Glyphicons */
+        .glyphicon {
+            font-family: "Glyphicons Halflings", sans-serif !important;
+            font-weight: normal !important;
+        }
+        
+        /* Ensure the map container doesn't inherit font overrides that break icons */
+        .leaflet-container .awesome-marker {
+            font-family: inherit;
+        }
+    </style>
+    <!-- Map and Navigation JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
     
-            <meta name="viewport" content="width=device-width,
-                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-            <style>
-                #map_815ab636e0bfd70da7197a8785ebf630 {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-                .leaflet-container { font-size: 1rem; }
-            </style>
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
+    <!-- Navigation JavaScript -->
+    <script src="js/navigation.js"></script>
 
-            <style>html, body {
-                width: 100%;
-                height: 100%;
-                margin: 0;
-                padding: 0;
-            }
-            </style>
 
-            <style>#map {
-                position:absolute;
-                top:0;
-                bottom:0;
-                right:0;
-                left:0;
-                }
-            </style>
 
-            <script>
-                L_NO_TOUCH = false;
-                L_DISABLE_3D = false;
-            </script>
-
-        
-</head>
-<body>
+</html>
     
-    
-            <div class="folium-map" id="map_815ab636e0bfd70da7197a8785ebf630" ></div>
-        
-</body>
-<script>
+    <script>
     
     
             var map_815ab636e0bfd70da7197a8785ebf630 = L.map(
@@ -149,8 +267,8 @@
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
-  "icon": "tint",
-  "prefix": "glyphicon",
+  "icon": "swimming-pool",
+  "prefix": "fa",
   "extraClasses": "fa-rotate-0",
 }
             );
@@ -518,4 +636,3 @@
                 marker_db4de6ad488c333d2f6166a6ad74d924.setIcon(icon_786a27ee6199e21d6b06f91685eac5c5);
             
 </script>
-</html>

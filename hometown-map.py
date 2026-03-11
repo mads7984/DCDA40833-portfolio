@@ -152,7 +152,7 @@ if valid.empty:
 center_lat = valid["Latitude"].mean()
 center_lon = valid["Longitude"].mean()
 
-m = folium.Map(
+hometown_map = folium.Map(
     location=[center_lat, center_lon],
     zoom_start=12,
     tiles=MAPBOX_TILES,
@@ -167,6 +167,17 @@ COLOR_MAP = {
     "museum": "blue",
     "default": "gray"
 }
+
+title_html = """
+<div style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%);
+     z-index: 1000; background-color: rgba(255,255,255,0.9); padding: 10px 20px;
+     border: 2px solid #8B0000; border-radius: 8px; font-family: Georgia, serif;
+     font-size: 16px; font-weight: bold; color: #8B0000; box-shadow: 2px 2px 6px rgba(0,0,0,0.3);">
+    🏡 Hometown Map of Frederick, MD
+</div>
+"""
+hometown_map.get_root().html.add_child(folium.Element(title_html))
+
 
 # ============================================================
 # STEP 6 — ADD MARKERS WITH POPUPS
@@ -185,12 +196,12 @@ for _, row in valid.iterrows():
         location=[row["Latitude"], row["Longitude"]],
         popup=folium.Popup(popup_html, max_width=300),
         icon=folium.Icon(color=color, icon="info-sign")
-    ).add_to(m)
+    ).add_to(hometown_map)
 
 # ============================================================
 # STEP 7 — SAVE MAP
 # ============================================================
 OUTPUT_HTML = "hometown_map.html"
-m.save(OUTPUT_HTML)
+hometown_map.save(OUTPUT_HTML)
 
 print(f"\nMap saved as {OUTPUT_HTML}")
