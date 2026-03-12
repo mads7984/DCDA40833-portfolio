@@ -10,6 +10,7 @@
 </head>
 <body>
     <nav>
+        <!--Hamburger toggle menu whenever the screen is adjusted to 768px-->
         <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
@@ -42,20 +43,43 @@
 
     <header>
         <h1>AI-Assisted Development: Portfolio Enhancement & Python Generated Code</h1>
+        <p>This project explores AI-assisted development through portfolio enhancement and Python code generation. It evaluates the effectiveness, limitations, and responsible use of AI-generated code.</p>
     </header>
 
     <main>
+
+        <section>
+            <h2>Lab Requirements</h2>
+            <p>This lab required students to complete at least two AI-assisted coding experiments and reflect critically on the results. The assignment emphasized explaining AI-generated code, documenting levels of understanding, evaluating when AI was helpful or problematic, and integrating the work into the course portfolio.</p>
+        </section>
+
+        <section>
+            <h2>What I Learned</h2>
+            <p>This lab helped me better understand AI as a coding collaborator rather than a replacement for technical understanding. Through portfolio enhancement and Python code generation, I learned that AI can speed up development and troubleshooting, but it often produces inefficient or overly complex solutions that still require careful review, revision, and interpretation.</p>
+        </section>
+
+        <section>
+            <h2>What This Demonstrates</h2>
+            <p>This lab demonstrates my ability to use AI tools within project development while maintaining responsibility for understanding and evaluating the output. It highlights my skills in debugging, interface improvement, code comparison, and reflecting on the ethical and practical limits of AI-assisted programming.</p>
+        </section>
+
+        <section>
+            <h2>Full Project Write-Up</h2>
+        </section>
+
         <section>
             <h2>Experiment #1: Portfolio Enhancement</h2>
 
             <h3>Experiment Overview</h3>
             <p>For this experiment, I used AI to enhance my portfolio and user experience by generating new code to add a dark model toggle and improve the overall visual design of my portfolio. The feature allows users to customize their experience by switching between light and dark modes, improving accessibility and user comfort. The AI-generated code was integrated into my existing HTML and CSS files to create a seamless dark mode toggle that remembers user preferences. I understood what the AI generated code did, but I had to do some research to fully understand how it functioned. I'm still gaining confidence with HTML web design, so this experiment, and the research that accompanied it, was extremely helpful in deepening my understanding of HTML and how it can be used to customize user interfaces.</p>
 
+            <!--Including screenshots of how my webpage looked before using AI for portfolio enhancement-->
             <figure class="viz-container">
                 <a href="images\webpagedesktopog.png" targets="_blank"><img src="images\webpagedesktoprs.png" alt="Screenshot of the desktop view of the webpage"></a>
                 <figcaption>Figure 1: Screenshot of the desktop view of the enhanced portfolio webpage with dark mode toggle. (Click image to enlarge)</figcaption>
             </figure>
 
+            <!--Including a screenshot of the AI prompt used to generate the dark mode toggle code-->
             <figure class="viz-container">
                 <a href="images\portfolioenhancementaipromptog.png" targets="_blank"><img src="images\portfolioenhancementaipromptrs.png" alt="Screenshot of the AI prompt used to generate the dark mode toggle code"></a>
                 <figcaption>Figure 2: Screenshot of the AI prompt used to generate the dark mode toggle code. (Click image to enlarge)</figcaption>
@@ -64,11 +88,13 @@
             <h3>Challenges and Solutions</h3>
             <p>The first output AI generated set the toggle and menu as two separate elements. This didn't present any issues when viewing the webpage in desktop view, but when the screen was resized to mobile view, the toggle and collapsed menu overlapped. I asked AI to adjust the code to include the toggle within the menu itself, which resolved the issue and created a neater interface for mobile users.</p>
 
+            <!--Including a screenshot of the mobile view with the dark mode toggle issue-->
             <figure class="viz-container">
                 <a href="images\webpagemobileissueog.png" targets="_blank"><img src="images\webpagemobileissuers.png" alt="Screenshot of the mobile view of the webpage with the dark mode toggle issue"></a>
                 <figcaption>Figure 3: Screenshot of the mobile view of the enhanced portfolio webpage showing the dark mode toggle issue, where the toggle and collapsed menu overlap. (Click image to enlarge)</figcaption>
             </figure>
 
+            <!--Including screenshots of the mobile view with the dark mode toggle issue resolved-->
             <figure class="viz-container">
                 <a href="images\webpagemobilesolutionog.png" targets="_blank"><img src="images\webpagemobilesolutionrs.png" alt="Screenshot of the mobile view of the webpage with the dark mode toggle issue resolved"></a>
                 <figcaption>Figure 4: Screenshot of the mobile view of the enhanced portfolio webpage showing the dark mode toggle issue resolved, where the toggle is now integrated within the menu. (Click image to enlarge)</figcaption>
@@ -80,6 +106,7 @@
             <h3>Experiment Overview</h3>
             <p>For this experiment, I took a project I did in a previous class where I compared opioid dispensing rates and the Social Vulnerability Index (SVI) for different counties in DFW and used AI to complete the same tasks I completed in that project. The goal was to see how AI would compare to my human work in the original project, would it be more complicated? Would it make the process faster or more efficient?</p>
 
+            <!--Including a screenshot of the AI prompt used to generate the dark mode toggle code-->
             <figure class="viz-container">
                 <a href="images\aipromptog.png" targets="_blank"><img src="images\aipromptrs.png" alt="Screenshot of the original prompt given to Claude"></a>
                 <figcaption>Figure 5: Screenshot of the original prompt I gave <strong>Claude</strong>, the AI integrated into Google Colab. (Click image to enlarge)</figcaption>
@@ -89,6 +116,7 @@
             <p>Compared to my original project, the AI-generated code was not as efficient. Simple processes such as cleaning and merging the data took more steps than in the human generated code, and it required several prompts to achieve the desired outcome. Luckily, I had my original project to compare outputs, which helped me identify and correct issues within the AI-generated code when it came to cleaning.</p>
             
             <h4>Cleaning Data</h4>
+            <!--Including screenshots of the data cleaning process-->
             <figure class="viz-container">
                 <a href="images\filtermergeog.png" targets="_blank"><img src="images\filtermergers.png" alt="Screenshot of how my original code merged datasets"></a>
                 <figcaption>Figure 6: Screenshot of how <strong>Claude</strong> initially filtered the datasets to prepare for the merge. (Click image to enlarge)</figcaption>
@@ -109,6 +137,7 @@
             <p>On the other hand, the AI-generated code was more complicated, required more steps to reach the same end-result, and was less readable. The AI-generated code created multiple DataFrames to isolate the data, which made it hard to follow when reviewing the generated code. As seen through the compared code, there was a much simpler approach that I had taken in my original code.</p>
             
             <h4>Merging Data</h4>
+            <!--Including screenshots of the merging process-->
             <figure class="viz-container">
                 <a href="images\aimerge1og.png" targets="_blank"><img src="images\aimerge1rs.png" alt="Screenshot of the AI-generated code merging datasets"></a>
                 <figcaption>Figure 9: Screenshot of how <strong>Claude</strong> chose to approach merging datasets. (Click image to enlarge)</figcaption>
@@ -122,7 +151,7 @@
             <p>After AI had merged the datasets, it did not effectively clean the data. The AI-generated code did not properly handle duplicate county names or FIPS codes, which led to inconsistencies in the merged dataset. This was fixable, but required additional prompting of the AI.</p>
 
             <h4>Further Cleaning of AI-Merged Data</h4>
-
+            <!--Including screenshots of the further cleaning process-->
             <figure class="viz-container">
                 <a href="images\countynamespromptog.png" targets="_blank"><img src="images\countynamespromptrs.png" alt="Screenshot of the prompt given to Claude to generate code to drop duplicate county name columns"></a>
                 <figcaption>Figure 11: Screenshot of the prompt given to <strong>Claude</strong> to generate code to drop duplicate county name columns. (Click image to enlarge)</figcaption>
@@ -146,7 +175,7 @@
             <p>After continuously preparing the data, the AI-generated code was able to run an OLS regression model and provided the same results as my original project.</p>
 
             <h4>OLS Regression Interpretation</h4>
-
+            <!--Including a screenshot of the OLS regression interpretation generated by Claude's AI code-->
             <figure class="viz-container">
                 <a href="images\olsinterpretation1og.png" targets="_blank"><img src="images\olsinterpretation2rs.png" alt="Screenshot of how my original code merged datasets"></a>
                 <figcaption>Figure 15: Screenshot of the OLS regression interpretation generated by <strong>Claude's</strong> AI code. (Click image to enlarge)</figcaption>
