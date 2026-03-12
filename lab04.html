@@ -43,19 +43,68 @@
 
     <header>
         <h1>Data Visualization Analysis: Cardiovascular System Pharmaceutical Consumption and Diet Composition in OECD Countries</h1>
+        <p>This project presents a Tableau dashboard analyzing cardiovascular drug consumption and diet composition across OECD countries. It explores potential relationships between health outcomes and dietary patterns through interactive data visualization.</p>
     </header>
 
     <main>
+
         <section>
+            <h2>Lab Requirements</h2>
+            <p>This lab required students to create an original data visualization using Tableau Public. The assignment involved identifying a research question, collecting and preparing datasets, designing an effective visualization or dashboard, and reflecting on the insights and limitations of the analysis.</p>
+        </section>
+
+        <section>
+            <h2>What I Learned</h2>
+            <p>This lab helped me develop practical experience working with real-world datasets and transforming them into meaningful visualizations. I learned how data cleaning, joining datasets, and designing a dashboard in Tableau, all visualization choices, influence how audiences interpret data and how interactive dashboards can help portray complex relationships.</p>
+        </section>
+
+        <section>
+            <h2>What This Demonstrates</h2>
+            <p>This lab demonstrates my ability to collect, prepare, and analyze datasets while designing clear and effective visualizations. It highlights my skills in data interpretation, dashboard design, and using visualization tools to explore patterns and communicate insights.</p>
+        </section>
+
+        <section>
+            <h2>Full Project Write-Up</h2>
+        </section>
+
+        <section>
+            <!--Made the text cited the sources of my data clickable links that can take the user directly to the data-->
             <h2>Visualization Overview</h2>
-            <p>I chose to look at the consumption of pharmaceuticals that treat cardiovascular diseases and the diet consumption of fruits and vegetables versus sugar for different countries. I collected the pharmaceutical consumption data from the OECD Data Explorer, and through their website I was able to refine my data selection to cardiovascular system drugs, OECD countries, and 2010-2024 data. I also collected data for diet consumption from a premade Kaggle dataset, which used data from the Food and Agriculture Organization of the United Nations to compile its information.  </p>
+            <p>I chose to examine the consumption of pharmaceuticals that treat cardiovascular diseases alongside diet composition of fruits, vegetables, and sugar across OECD countries. I collected the pharmaceutical consumption data from the 
+            <a href="https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CHealth%23HEA%23%7CPharmaceutical%20market%23HEA_PHM%23&pg=0&fc=Topic&bp=true&snb=4&vw=tb&df[ds]=dsDisseminateFinalDMZ&df[id]=HEALTH_PHMC%40DF_PHMC_CONSUM&df[ag]=OECD.ELS.HD&df[vs]=1.1" target="_blank">
+            OECD Data Explorer pharmaceutical consumption dataset
+            </a>, which provides country-level data on drug consumption measured in defined daily doses. I also collected diet composition data from the 
+            <a href="https://www.kaggle.com/datasets/miguelroca/global-health-nutrition-mortality-economic-data" target="_blank">
+            Global Health Nutrition Mortality Economic Dataset
+            </a> on Kaggle, which compiles food consumption data from the United Nations Food and Agriculture Organization (FAO).
+            </p>
             
-            <!-- PASTE YOUR TABLEAU EMBED CODE HERE -->
-            <!-- Tableau embed code goes here -->
+            <!--Pasted my Tableau embedded code-->
              <div class='tableauPlaceholder' id='viz1771367328102' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;CardiovascularSystemPharmaceuticalConsumptionOECDCountries&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CardiovascularSystemPharmaceuticalConsumptionOECDCountries&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;CardiovascularSystemPharmaceuticalConsumptionOECDCountries&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1771367328102');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='827px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
             
             <figcaption><strong>Figure 1:</strong> Tableau visualization dashboard showing cardiovascular system pharmaceutical consumption and diet composition in OECD countries (Click "See this is full screen" for maximum visibility)</figcaption>
+            <p><strong>Data Sources:</strong> OECD Data Explorer; FAOSTAT global nutrition dataset via Kaggle.</p>
         </section>
+
+        <section>
+        <h2>Data Sources</h2>
+        <ul>
+            <li>
+                Pharmaceutical consumption data from the 
+                <a href="https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CHealth%23HEA%23%7CPharmaceutical%20market%23HEA_PHM%23&pg=0&fc=Topic&bp=true&snb=4&vw=tb&df[ds]=dsDisseminateFinalDMZ&df[id]=HEALTH_PHMC%40DF_PHMC_CONSUM&df[ag]=OECD.ELS.HD&df[vs]=1.1&dq=AUS%2BAUT%2BBEL%2BCAN%2BCHL%2BCRI%2BCZE%2BDNK%2BEST%2BFIN%2BFRA%2BDEU%2BGRC%2BHUN%2BISL%2BIRL%2BISR%2BITA%2BJPN%2BKOR%2BLVA%2BLTU%2BLUX%2BNLD%2BNZL%2BNOR%2BPOL%2BPRT%2BSVK%2BSVN%2BESP%2BSWE%2BTUR%2BGBR....C%2BC01A%2BC01B%2BC02%2BC03%2BC07%2BC08%2BC09%2BC10&pd=2010%2C&to[TIME_PERIOD]=false" target="_blank">
+                OECD Data Explorer
+                </a>.
+            </li>
+
+            <li>
+                Diet composition data from the 
+                <a href="https://www.kaggle.com/datasets/miguelroca/global-health-nutrition-mortality-economic-data" target="_blank">
+                Global Health Nutrition Mortality Economic Dataset (Kaggle)
+                </a>, compiled from FAOSTAT data.
+            </li>
+        </ul>
+        </section>
+
 
         <section>
             <h2>Analysis & Reflection</h2>
